@@ -11,8 +11,11 @@ Route::middleware('auth')->group(function(){
     })->name('home');
 });
 
+Route::middleware('guest')->group(function(){
+    Route::get('/register',[Authcontroller::class,'showRegister'])->name('register');
+});
+
 Route::get('/login',[Authcontroller::class, 'affiche']);
 Route::post('/login',[Authcontroller::class,'login'])->name('login');
 
-
-
+Route::post('/register',[Authcontroller::class, 'store'])->name('storeuser');
