@@ -19,3 +19,4 @@ Route::get('/login',[Authcontroller::class, 'affiche']);
 Route::post('/login',[Authcontroller::class,'login'])->name('login');
 
 Route::post('/register',[Authcontroller::class, 'store'])->name('storeuser');
+
