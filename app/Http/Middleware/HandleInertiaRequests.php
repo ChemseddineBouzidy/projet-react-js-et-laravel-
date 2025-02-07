@@ -36,7 +36,17 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
-            //
+            'errors' => function () use ($request) {
+                return $this->resolveValidationErrors($request);
+            },
+              // Synchronously...
+              'appName' => config('app.name'),
+
+              // Lazily...
+              'auth.user' => fn () => $request->user()
+                  ? $request->user()->only('id', 'name', 'email','image','specialite')
+                  : null,
         ]);
+     
     }
 }

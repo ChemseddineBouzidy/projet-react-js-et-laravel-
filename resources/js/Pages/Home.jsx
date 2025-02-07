@@ -1,8 +1,11 @@
 import React from 'react'
 import Createpost from './Createpost'
 import Post from './post'
+import { usePage } from '@inertiajs/react';
 
 function Home() {
+  const { posts } = usePage().props;
+  console.log( posts)
   return (
     <div className="container my-3 pb-5">
       <div className="row justify-content-center">
@@ -12,10 +15,7 @@ function Home() {
           </div>
 
           <div className="posts">
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
+          <Post posts={posts} />
           </div>
         </div>
       </div>

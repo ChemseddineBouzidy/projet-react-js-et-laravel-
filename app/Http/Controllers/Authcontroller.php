@@ -58,4 +58,11 @@ class Authcontroller extends Controller
         $user->notify(new RegisterNotification($user));
         return redirect()->route('home');
     }
+    public function logout()
+    {
+     
+        Auth::logout();
+
+       return to_route('login.show')->with("success","Vous etes bien deconnecte");
+    }
 }
