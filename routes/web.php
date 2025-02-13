@@ -33,3 +33,7 @@ Route::get('/react', function() {
 Route::get('/products', function() {
     return inertia("products");
 });
+
+Route::get('/students', function() {
+    return inertia("students");
+});

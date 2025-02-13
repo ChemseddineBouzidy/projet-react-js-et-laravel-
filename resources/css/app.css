@@ -44,3 +44,43 @@
 .img-preview {
     width: 70px;
 }
+
+
+/* CSS Components */
+
+.product {
+    width: 150px;
+    height: 200px;
+    background-color: beige;
+    border: 1px solid;
+}
+
+.product img {
+    width: 100%;
+}
+
+.product h2{
+    font-size: .9em;
+}
+
+.details {
+    padding: 10px;
+}
+
+.products {
+    display: flex;
+    gap: 40px;
+}
+
+.stude {
+    background: #d2e8ef;
+    width: 300px;
+    height: 500px;
+    border-radius: 10px;
+}
+ .stude img {
+    width: 100%;
+    height:  300px;
+    object-fit: cover;
+    object-position: top;
+ }

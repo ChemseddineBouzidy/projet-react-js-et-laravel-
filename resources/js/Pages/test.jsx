@@ -1,11 +1,18 @@
-import React from "react"
+import React from "react";
 
-
-function SingleProduct() {
-    return <div>
-        <img src="https://glovo.dhmedia.io/image/customer-assets-glovo/countries/Stores/bghikwl7kiy5zyytrhp3?t=W3siYXV0byI6eyJxIjoibG93In19XQ==" alt="" width={100} />
-        <h2>Titre du product</h2> 
-    </div>
+function SingleProduct({product}) {
+    return (
+        <div className="product">
+            <img
+                src={product.image}
+                alt=""
+                width={100}
+            />
+            <div className="details">
+                <h2>{product.name}</h2>
+            </div>
+        </div>
+    );
 }
 
-export default SingleProduct
+export default SingleProduct;
